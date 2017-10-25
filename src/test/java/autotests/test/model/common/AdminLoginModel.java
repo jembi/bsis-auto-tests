@@ -16,12 +16,12 @@ public class AdminLoginModel {
 
        //AdminLoginPageObject.getUsernameField().sendKeys(Text);
        //input[@ng-model='loginEmail']") );
-        DriverFunctions.waitForElement(Hooks.driver,By.xpath("//input[@ng-model='loginEmail']") );
+        DriverFunctions.waitForElement(Hooks.driver,By.xpath("//input[@ng-model='credentials.username']") );
         AdminLoginPageObject.usernameField.sendKeys(Text);
      }
 
     public void enterPassword(String Text) {
-        DriverFunctions.waitForElement(Hooks.driver,By.xpath("//input[@ng-model='loginPassword']") );
+        DriverFunctions.waitForElement(Hooks.driver,By.xpath("//input[@ng-model='credentials.password']") );
         AdminLoginPageObject.passwordField.sendKeys(Text);
     }
 

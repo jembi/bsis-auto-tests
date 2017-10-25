@@ -16,10 +16,10 @@ public class TestRailIntegrationClient {
 
     //Projects
     //Go into testrail and use the ID's based on the
-    private static final int AUTOMATION_PROJECT_ID = 4;
+    private static final int AUTOMATION_PROJECT_ID = 7;
 
     //Suites
-    private static final int AUTOMATION_SUITE_ID = 51;
+    private static final int AUTOMATION_SUITE_ID = 58;
 
 
     //Section
@@ -76,7 +76,7 @@ public class TestRailIntegrationClient {
     public void addResultToSuite(String suite, Integer testCaseId, boolean passed) {
 
         switch (suite) {
-            case "Console Testing":
+            case "BSIS Auto Tests":
                 addResultToRun(testCaseId, passed, genericTestRun);
                 break;
                 default: {

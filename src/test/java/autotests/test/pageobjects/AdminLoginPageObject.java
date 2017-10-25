@@ -12,15 +12,15 @@ public class AdminLoginPageObject extends BasePage {
         super(driver);
     }
 
-    @FindBy(how = How.XPATH, using = "//input[@ng-model='loginEmail']")
+    @FindBy(how = How.XPATH, using = "//input[@ng-model='credentials.username']")
     public static WebElement usernameField;
 
 
-    @FindBy(how = How.XPATH, using = "//input[@ng-model='loginPassword']")
+    @FindBy(how = How.XPATH, using = "//input[@ng-model='credentials.password']")
     public static WebElement passwordField;
 
 
-    @FindBy(how = How.XPATH, using = "//*[@id='body']/div/div/div/div/div[1]/form/div[2]/input")
+    @FindBy(how = How.XPATH, using = "//*[@id='wrap']/div/div[1]/form/button")
     public static WebElement loginButton;
 
     @FindBy(how = How.XPATH, using = "//*[@id='header']/div/div/div/div[2]/div[1]/div/nav/ul/li/a")
@@ -29,13 +29,5 @@ public class AdminLoginPageObject extends BasePage {
     @FindBy(how = How.XPATH, using = "//*[@id='header']/div/div/div/div[2]/div[1]/div/nav/ul/li/ul/li[3]/a")
     public static WebElement logoutButton;
 
-    public static WebElement getUsernameField()
-    {
-        WebElement username ;
-     //   username = DriverFunctions.getElementOfTypeWithTextEquals (driver,"text","E-mail address");
-        username = driver.findElement(By.cssSelector("input[type='text']"));
-        return username ;
-
-    }
 
 }

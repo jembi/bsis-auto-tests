@@ -23,15 +23,6 @@ public class AdminLoginStepDefinitions {
         commonModel.addTestCaseIdsToSharedStorage(suite, testCaseId);
     }
 
-    @When("^I navigate to the openhim landing page$")
-    public void i_navigate_to_the_openhim_landing_page() throws Throwable {
-        AdditionalConditions.waitOnAngular(Hooks.driver);
-
-        PageFactory.initElements(Hooks.driver, AdminLoginPageObject.class);
-        System.out.println(PropertiesUtil.getPropertyAsString("test-url"));
-        System.out.println(Hooks.driver);
-        Hooks.driver.get(PropertiesUtil.getPropertyAsString("test-url"));
-    }
 
     @When("^I enter username of$")
     public void i_enter_username_of(DataTable dataTable) throws Throwable {
@@ -58,12 +49,6 @@ public class AdminLoginStepDefinitions {
 
     }
 
-    @Then("^I am confronted by the openhim-dashboard$")
-    public void i_am_confronted_by_the_openhim_dashboard() throws Throwable {
-        adminLoginModel.checkCurrentURl();
-        AdditionalConditions.waitOnAngular(Hooks.driver);
-    }
-
     @Then("^I click on the profile Icon$")
     public void i_click_on_the_profile_Icon() throws Throwable {
         adminLoginModel.clickProfile();
@@ -74,11 +59,26 @@ public class AdminLoginStepDefinitions {
     public void click_on_Logout() throws Throwable {
         adminLoginModel.clickLogout();
     }
-    @Then("^I am confronted by the openhim landing page$")
-    public void i_am_confronted_by_the_openhim_landing_page() throws Throwable {
 
+    @When("^I navigate to the bsislanding page$")
+    public void i_navigate_to_the_bsislanding_page() throws Throwable {
+        AdditionalConditions.waitOnAngular(Hooks.driver);
+        PageFactory.initElements(Hooks.driver, AdminLoginPageObject.class);
+        System.out.println(PropertiesUtil.getPropertyAsString("test-url"));
+        System.out.println(Hooks.driver);
+        Hooks.driver.get(PropertiesUtil.getPropertyAsString("test-url"));
     }
 
+    @Then("^I am confronted by the bsis-homepage$")
+    public void i_am_confronted_by_the_bsis_homepage() throws Throwable {
+        adminLoginModel.checkCurrentURl();
+        AdditionalConditions.waitOnAngular(Hooks.driver);
+    }
+
+    @Then("^I check that I have the correct \"(.*?)\"$")
+    public void i_check_that_I_have_the_correct(String arg1) throws Throwable {
+
+    }
 
 
 
